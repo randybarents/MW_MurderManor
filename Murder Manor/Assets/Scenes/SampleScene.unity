@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.25
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.083333336
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -377,6 +377,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cabinetBed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: edcd0eb8949dc8b4098104cac2b1c375,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: edcd0eb8949dc8b4098104cac2b1c375,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edcd0eb8949dc8b4098104cac2b1c375, type: 3}
@@ -2329,6 +2339,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: cabinetBedDrawer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2bb40ed10d28904bbc6e75d44623d57, type: 3}
 --- !u!4 &96336360 stripped
@@ -3188,6 +3208,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: doorway (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!4 &128837704 stripped
@@ -3574,6 +3604,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: cabinetBedDrawer (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2bb40ed10d28904bbc6e75d44623d57, type: 3}
 --- !u!4 &145414367 stripped
@@ -3782,6 +3822,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: cabinetBedDrawer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2bb40ed10d28904bbc6e75d44623d57, type: 3}
 --- !u!4 &153833411 stripped
@@ -3847,6 +3897,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab79d1b4dcf529e48a9e45316bbda3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &161570083
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161570077}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5779197439840542771, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &161800581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5999,6 +6063,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.39
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!4 &244570932 stripped
@@ -6024,7 +6098,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8066634281429336969, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &247054732
@@ -6997,7 +7071,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
@@ -7005,7 +7079,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.083333336
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: b32ccd930c4ffb24b913e03e3e619ac7, type: 2}
 --- !u!4 &283704175
@@ -12654,6 +12728,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1877356488}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &446062916
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446062915}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5779197439840542771, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!114 &446062919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12965,6 +13053,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchenSink
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: a771e9149c8aba84d874a31454a7c925,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: a771e9149c8aba84d874a31454a7c925,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a771e9149c8aba84d874a31454a7c925, type: 3}
 --- !u!4 &453287901 stripped
@@ -13198,7 +13296,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8001616320750332228, guid: 157d707ffc35c1a439f25023fb35e889, type: 3}
 --- !u!1001 &462066207
@@ -16338,6 +16436,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchenStove
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 20655cd20087e4c43b389ce83376c850,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 20655cd20087e4c43b389ce83376c850,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20655cd20087e4c43b389ce83376c850, type: 3}
 --- !u!4 &555348330 stripped
@@ -16593,6 +16701,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &562561172
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562561166}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5779197439840542771, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &569562415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17820,6 +17942,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5779197439840542771, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
+--- !u!64 &612255320
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612255313}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5779197439840542771, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &612259914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17981,6 +18117,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cabinetBedDrawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2bb40ed10d28904bbc6e75d44623d57, type: 3}
@@ -18172,6 +18318,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: doorway (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!4 &616113326 stripped
@@ -18197,7 +18353,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8066634281429336969, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &616130598
@@ -25086,6 +25242,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: cabinetBed (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: edcd0eb8949dc8b4098104cac2b1c375,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: edcd0eb8949dc8b4098104cac2b1c375,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edcd0eb8949dc8b4098104cac2b1c375, type: 3}
 --- !u!4 &825543125 stripped
@@ -26149,6 +26315,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: cabinetBedDrawer
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2bb40ed10d28904bbc6e75d44623d57, type: 3}
 --- !u!4 &855347189 stripped
@@ -26338,6 +26514,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: doorway (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
@@ -29029,6 +29215,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: doorway (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!4 &955590735 stripped
@@ -29054,7 +29250,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8066634281429336969, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &960138394
@@ -29515,6 +29711,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: doorway (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!4 &970363000 stripped
@@ -29540,7 +29746,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8066634281429336969, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &973978988
@@ -30386,6 +30592,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: doorway (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!4 &993490546 stripped
@@ -30411,7 +30627,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8066634281429336969, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &994590403
@@ -31144,6 +31360,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab79d1b4dcf529e48a9e45316bbda3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &1025039413
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025039407}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5779197439840542771, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &1030797460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31719,6 +31949,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: doorway (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!4 &1039848538 stripped
@@ -31744,7 +31984,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8066634281429336969, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &1041194045
@@ -31974,6 +32214,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &1052042263
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052042257}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5779197439840542771, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &1057498305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32679,6 +32933,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cabinetBedDrawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2bb40ed10d28904bbc6e75d44623d57, type: 3}
@@ -37572,6 +37836,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchenCabinet (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 6496c4f1399a89a42a756ecee0f24d59,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 6496c4f1399a89a42a756ecee0f24d59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6496c4f1399a89a42a756ecee0f24d59, type: 3}
 --- !u!4 &1289815026 stripped
@@ -39345,6 +39619,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cabinetBedDrawer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2bb40ed10d28904bbc6e75d44623d57, type: 3}
@@ -41637,6 +41921,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6281424698479989189, guid: 5016aa34caed69141b21350e8943392b, type: 3}
+--- !u!1 &1411822729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1986703999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1411822733
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411822729}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5779197439840542771, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &1412307400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41893,6 +42197,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cabinetBed (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: edcd0eb8949dc8b4098104cac2b1c375,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: edcd0eb8949dc8b4098104cac2b1c375,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edcd0eb8949dc8b4098104cac2b1c375, type: 3}
@@ -42692,6 +43006,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: cabinetBed (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: edcd0eb8949dc8b4098104cac2b1c375,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: edcd0eb8949dc8b4098104cac2b1c375,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edcd0eb8949dc8b4098104cac2b1c375, type: 3}
 --- !u!4 &1478137790 stripped
@@ -43475,6 +43799,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchenCabinet
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 6496c4f1399a89a42a756ecee0f24d59,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 6496c4f1399a89a42a756ecee0f24d59,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6496c4f1399a89a42a756ecee0f24d59, type: 3}
 --- !u!4 &1508732889 stripped
@@ -43653,6 +43987,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &1518448384
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518448378}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5779197439840542771, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &1520231861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44516,6 +44864,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: doorway (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!4 &1558648824 stripped
@@ -44541,7 +44899,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8066634281429336969, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1 &1559538905
@@ -44629,6 +44987,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab79d1b4dcf529e48a9e45316bbda3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &1561800338
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561800332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5779197439840542771, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &1564015747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45283,6 +45655,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cabinetBedDrawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: c2bb40ed10d28904bbc6e75d44623d57,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2bb40ed10d28904bbc6e75d44623d57, type: 3}
@@ -45968,6 +46350,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cabinetBed (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: edcd0eb8949dc8b4098104cac2b1c375,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: edcd0eb8949dc8b4098104cac2b1c375,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edcd0eb8949dc8b4098104cac2b1c375, type: 3}
@@ -47040,6 +47432,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab79d1b4dcf529e48a9e45316bbda3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &1680124449
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680124443}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5779197439840542771, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &1684045240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50372,6 +50778,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: HingeDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 2801853824508800399, guid: ffef3f62769188a408008381f876f031,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2801853824508800399, guid: ffef3f62769188a408008381f876f031,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffef3f62769188a408008381f876f031, type: 3}
 --- !u!1001 &1776069697
@@ -50641,6 +51057,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: doorway (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!4 &1778688599 stripped
@@ -50666,7 +51092,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8066634281429336969, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &1789506657
@@ -52826,6 +53252,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: doorway (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!4 &1877356489 stripped
@@ -52851,7 +53287,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8066634281429336969, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &1879349652
@@ -53802,6 +54238,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: cabinetBed
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: edcd0eb8949dc8b4098104cac2b1c375,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: edcd0eb8949dc8b4098104cac2b1c375,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edcd0eb8949dc8b4098104cac2b1c375, type: 3}
 --- !u!4 &1915946426 stripped
@@ -53992,6 +54438,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: doorway (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!4 &1922587996 stripped
@@ -54017,7 +54473,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8066634281429336969, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
 --- !u!1001 &1928168114
@@ -55732,6 +56188,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: doorway
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: 168c7dc6ae1b85d4daab8d011619aff2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 168c7dc6ae1b85d4daab8d011619aff2, type: 3}
@@ -58050,6 +58516,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cabinetBed
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: edcd0eb8949dc8b4098104cac2b1c375,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4423045620967985251, guid: edcd0eb8949dc8b4098104cac2b1c375,
+        type: 3}
+      propertyPath: m_TagString
+      value: Doors
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edcd0eb8949dc8b4098104cac2b1c375, type: 3}
