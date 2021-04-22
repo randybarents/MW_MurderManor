@@ -952,6 +952,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0887e554f699c9f48b04546f728b9327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerInteractor: {fileID: 401329375013789399, guid: 7aeb0bfc7ae2b514091006f520d9e9b7,
+    type: 3}
 --- !u!114 &1600128949877288636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -964,10 +966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7a89ff5e8286f745ae42fcfd3d22d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogFile: Assets/Resources/NPCDialog.txt
-  weaponDialogFile: Assets/Resources/WeaponDialog.txt
   screenText: {fileID: 0}
-  parentobj: {fileID: 1600128949666826666}
 --- !u!195 &1600128949877288630
 NavMeshAgent:
   m_ObjectHideFlags: 0
