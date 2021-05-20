@@ -14,7 +14,7 @@ public class DoorTrigger : MonoBehaviour
         m_Animator = gameObject.GetComponent<Animator>();
     }
 
-    public void PlayAnimation()
+    public void PlayerInteract()
     {
         if (!pauseInteraction)
         {

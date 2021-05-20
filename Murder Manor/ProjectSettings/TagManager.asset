@@ -8,6 +8,9 @@ TagManager:
   - Gardener
   - Mechanic
   - Doors
+  - InteractiveObject
+  - Fire
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - 
   - 
   - Door
-  - 
+  - Roof
   - 
   - 
   - 
