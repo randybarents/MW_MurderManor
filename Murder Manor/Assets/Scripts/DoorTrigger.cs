@@ -30,7 +30,7 @@ public class DoorTrigger : MonoBehaviour
         transitioning = GetDoorState();
         if (!transitioning)
         {
-            if (Input.GetKey(KeyCode.UpArrow)/*|| OVRInput.GetDown(OVRInput.Button.One)*/ || RaycastActive)
+            if (Input.GetKey(KeyCode.E)/*|| OVRInput.GetDown(OVRInput.Button.One)*/ || RaycastActive)
             {
                 if (doorOpen == false)
                 {
