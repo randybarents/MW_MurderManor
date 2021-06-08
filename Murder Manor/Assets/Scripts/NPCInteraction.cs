@@ -7,161 +7,56 @@ using UnityEngine.Windows.Speech;
 using System;
 using System.Linq;
 using UnityEngine.UI;
+using System.Globalization;
+using Newtonsoft.Json;
 
-public class NPCInteraction : MonoBehaviour
-{
+public class NPCInteraction : MonoBehaviour {
+    private const float TextDuration = 6.0f;
 
-    private string chefFile = @"Assets/Resources/ChefScenario1.txt";
-    private string chefFile2 = @"Assets/Resources/ChefScenario2.txt";
-    private string gardenerFile = @"Assets/Resources/GardenerScenario1.txt";
-    private string gardenerFile2 = @"Assets/Resources/GardenerScenario2.txt";
-    private string mechanicFile = @"Assets/Resources/MechanicScenario1.txt";
-    private string mechanicFile2 = @"Assets/Resources/MechanicScenario2.txt";
-
-    private int scenarioNumber = 1;
-
-
-    public Text screenText;
-
-    private string npcType;
-
-    private float textDuration = 6f;
+    public GameObject Answer;
+    private GameObject weaponChild;
+    private GameObject npcChild;
+    private GameObject locationChild;
+    public Text ScreenText;
+    private Dictionary<string, string> Scenarios;
+    private readonly int ScenarioNumber = 1;
+    private string NPCType;
 
     private KeywordRecognizer keywordRecognizer;
+    private readonly Dictionary<string, Action> actions = new Dictionary<string, Action>();
 
-    private Dictionary<string, Action> actions = new Dictionary<string, Action>();
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        actions.Add("Murder info", Help);
-
+    void Start() {
+        weaponChild = Answer.transform.Find("Weapon").gameObject;
+        npcChild = Answer.transform.Find("NPC").gameObject;
+        locationChild = Answer.transform.Find("Location").gameObject;
+        string scenarioJson = File.ReadAllText("Assets/Resources/Scenarios.json");
+        Scenarios = JsonConvert.DeserializeObject<Dictionary<string, string>>(scenarioJson);
+        actions.Add("help", Help);
         keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
         keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
         keywordRecognizer.Start();
     }
 
-    private void RecognizedSpeech(PhraseRecognizedEventArgs speech)
-    {
-        Debug.Log(speech.text);
+    private void RecognizedSpeech(PhraseRecognizedEventArgs speech) {
         actions[speech.text].Invoke();
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Chef")
-        {
-            npcType = "Chef";
-        }
-        else if (other.tag == "Gardener")
-        {
-            npcType = "Gardener";
-        }
-        else if (other.tag == "Mechanic")
-        {
-            npcType = "Mechanic";
-        }
+    private void OnTriggerStay(Collider other) {
+        NPCType = other.tag;
     }
 
-    private void Help()
-    {
-        if (npcType == "Chef" && scenarioNumber == 1)
-        {
-            StartCoroutine("ReadChef");
-        }
-        else if (npcType == "Chef" && scenarioNumber == 2)
-        {
-            StartCoroutine("ReadChef2");
-        }
-        else if (npcType == "Gardener" && scenarioNumber == 1)
-        {
-            StartCoroutine("ReadGardener");
-        }
-        else if (npcType == "Gardener" && scenarioNumber == 2)
-        {
-            StartCoroutine("ReadGardener2");
-        }
-        else if (npcType == "Mechanic" && scenarioNumber == 1)
-        {
-            StartCoroutine("ReadMechanic");
-        }
-        else if (npcType == "Mechanic" && scenarioNumber == 2)
-        {
-            StartCoroutine("ReadMechanic2");
-        }
+    private void Help() {
+        Debug.Log("Heard");
+        string key = $"scenario.{NPCType}.{ScenarioNumber.ToString(CultureInfo.InvariantCulture)}";
+        StartCoroutine(Place(key, new string[] { weaponChild.GetComponent<Text>().ToString(), npcChild.GetComponent<Text>().ToString(), locationChild.GetComponent<Text>().ToString() }));
     }
 
-    private IEnumerator ReadChef()
-    {
-        using (StreamReader sr = new StreamReader(chefFile))
-        {
-            screenText.text = sr.ReadToEnd();
+    private IEnumerator Place(string key, params string[] args) {
+        ScreenText.color = Color.yellow;
+        if (Scenarios.TryGetValue(key, out string text)) {
+            ScreenText.text = string.Format(text, args);
+            yield return new WaitForSeconds(TextDuration);
         }
-        yield return new WaitForSeconds(textDuration);
-
-        screenText.text = "";
-    }
-
-    private IEnumerator ReadChef2()
-    {
-        using (StreamReader sr = new StreamReader(chefFile2))
-        {
-            screenText.text = sr.ReadToEnd();
-        }
-        yield return new WaitForSeconds(textDuration);
-
-        screenText.text = "";
-    }
-
-    private IEnumerator ReadGardener()
-    {
-        using (StreamReader sr = new StreamReader(gardenerFile))
-        {
-            screenText.color = Color.green;
-            screenText.text = sr.ReadToEnd();
-        }
-        yield return new WaitForSeconds(textDuration);
-
-        screenText.text = "";
-        screenText.color = Color.black;
-    }
-
-    private IEnumerator ReadGardener2()
-    {
-        using (StreamReader sr = new StreamReader(gardenerFile2))
-        {
-            screenText.color = Color.green;
-            screenText.text = sr.ReadToEnd();
-        }
-        yield return new WaitForSeconds(textDuration);
-
-        screenText.text = "";
-        screenText.color = Color.black;
-    }
-
-    private IEnumerator ReadMechanic()
-    {
-        using (StreamReader sr = new StreamReader(mechanicFile))
-        {
-            screenText.color = Color.red;
-            screenText.text = sr.ReadToEnd();
-        }
-        yield return new WaitForSeconds(textDuration);
-
-        screenText.text = "";
-        screenText.color = Color.black;
-    }
-
-    private IEnumerator ReadMechanic2()
-    {
-        using (StreamReader sr = new StreamReader(mechanicFile2))
-        {
-            screenText.color = Color.red;
-            screenText.text = sr.ReadToEnd();
-        }
-        yield return new WaitForSeconds(textDuration);
-
-        screenText.text = "";
-        screenText.color = Color.black;
+        ScreenText.text = "";
     }
 }

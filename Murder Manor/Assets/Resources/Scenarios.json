@@ -1,0 +1,16 @@
+{
+	"scenario.Baron.1": "This is horrible! How could this happen in my mansion! Please go talk to my wife.",
+	"scenario.Baron.2": "A murder?! In my mansion?! Horrible, I had no idea! I hope you can find the murderer soon!",
+	"scenario.Butler.1": "Hi sir, how may I help you? A murder?! That is not possible sir. Nobody in this mansion would be crazy enough to do this!",
+	"scenario.Butler.2": "How can I help you today sir? I see, the murder huh? Perhaps the chef or the mechanic knows more about it.",
+	"scenario.Chef.1": "Oh, hello! When I was working in the kitchen I think I heard something suspiscious coming from {2}. Be careful!",
+	"scenario.Chef.2": "Hi there buddy! Ofcourse I am a suspect with all these knives around, haha! But no seriously, I have no clue what happened, sorry!",
+	"scenario.Gardener.1": "Ah yes, I think I saw a {0} laying around somewhere. I think you should go and find this object if you want to have any chance of solving this murder.",
+	"scenario.Gardener.2": "I tought I heard something coming from {2}. You should check it out!",
+	"scenario.Maiden.1": "I was cleaning one of the rooms when I heard a thing or two. I'm not sure where it came from. Maybe the chef knows more.",
+	"scenario.Maiden.2": "I was cleaning one of the rooms when I heard a thing or two. I'm not sure where it came from. Maybe the gardener knows more.",
+	"scenario.Mechanic.1": "What do you want from me? I wish people stopped asking me about this damn murder. I was in my garage when it happened. Perhaps the Chef can give you the info you are after.",
+	"scenario.Mechanic.2": "Murder? I havent seen or heard a single thing. Now leave me alone!",
+	"scenario.Woman.1": "Did you speak to my husband? He is very upset about this whole situation. I dont want to accuse anyone but i think i might have seen {1} acting pretty suspicious. Please solve this murder!",
+	"scenario.Woman.2": "My husband is devastated by the murder. I think everyone is. Last days I have noticed {1} was acting weird. You should check him out."
+}
