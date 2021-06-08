@@ -3,11 +3,9 @@
 public class Location {
     public string Name { get; }
     public Vector3 WeaponPosition { get; }
-    public Vector3 NPCPosition { get; }
 
-    public Location(string name, Vector3 weaponPosition, Vector3 npcPosition) {
+    public Location(string name, Vector3 weaponPosition) {
         Name = name;
         WeaponPosition = weaponPosition;
-        NPCPosition = npcPosition;
     }
 }

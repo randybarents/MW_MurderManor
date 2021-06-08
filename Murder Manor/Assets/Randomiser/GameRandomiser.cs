@@ -1,52 +1,75 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameRandomiser : MonoBehaviour {
-    private readonly List<Location> Locations = new List<Location>() {
-        new Location("Entrance Hallway", new Vector3(58.0f, 0.0f, -3.0f), new Vector3(58.0f, 0.0f, -3.0f)),
-        new Location("Garage", new Vector3(58.0f, 0.0f, -3.0f), new Vector3(58.0f, 0.0f, -3.0f)),
-        new Location("Garage Closet", new Vector3(58.0f, 0.0f, -3.0f), new Vector3(58.0f, 0.0f, -3.0f)),
-        new Location("Living Room", new Vector3(58.0f, 0.0f, -3.0f), new Vector3(58.0f, 0.0f, -3.0f)),
-        new Location("Dinner Room", new Vector3(58.0f, 0.0f, -3.0f), new Vector3(58.0f, 0.0f, -3.0f)),
-        new Location("Kitchen", new Vector3(58.0f, 0.0f, -3.0f), new Vector3(58.0f, 0.0f, -3.0f)),
-        new Location("Upper Hallway", new Vector3(58.0f, 0.0f, -3.0f), new Vector3(58.0f, 0.0f, -3.0f)),
-        new Location("Bedroom", new Vector3(58.0f, 0.0f, -3.0f), new Vector3(58.0f, 0.0f, -3.0f)),
-        new Location("Walk-in Closet", new Vector3(58.0f, 0.0f, -3.0f), new Vector3(58.0f, 0.0f, -3.0f)),
-        new Location("Office Room", new Vector3(58.0f, 0.0f, -3.0f), new Vector3(58.0f, 0.0f, -3.0f)),
-        new Location("Balcony", new Vector3(58.0f, 0.0f, -3.0f), new Vector3(58.0f, 0.0f, -3.0f)),
-        new Location("Attic Stairs", new Vector3(58.0f, 0.0f, -3.0f), new Vector3(58.0f, 0.0f, -3.0f)),
-        new Location("Attic", new Vector3(58.0f, 0.0f, -3.0f), new Vector3(58.0f, 0.0f, -3.0f))
-    };
 
-    public List<GameObject> WeaponLocations;
-
+    public List<Location> Locations;
+    public List<GameObject> LocationObjects;
+    public List<GameObject> BloodyWeapons;
     public List<GameObject> Weapons;
     public List<GameObject> NPCs;
+    public Transform prefabToPlace;
+
 
     private readonly System.Random Rng = new System.Random();
+    public GameObject AnswerObject;
     private GameAnswer Answer;
 
     void Start() {
+        Locations = FillObjects();
         GenerateAnswer();
-        PlaceObjects();
     }
 
     void Update() {}
 
-    private void GenerateAnswer() {
-        GameObject weapon = SelectRandomWeapon();
-        Vector3 location = SelectRandomLocation();
-        GameObject npc = SelectRandomNPC();
-
-        Answer = new GameAnswer(weapon, location, npc);
-        PlaceClue(Answer);
+    private List<Location> FillObjects()
+    {
+        List<Location> locations = new List<Location>();
+        foreach (GameObject location in LocationObjects)
+        {
+            locations.Add(new Location(location.name, location.transform.position));
+        }
+        return locations;
     }
 
-    private void PlaceClue(GameAnswer answer) {
-        int value = Rng.Next(3);
-        switch (value) {
+    private void GenerateAnswer() {
+        GameObject murderWeapon = SelectRandomWeapon();
+        Location location = SelectRandomLocation();
+        GameObject npc = SelectRandomNPC();
+
+        Answer = new GameAnswer(murderWeapon, location, npc);
+
+        GetChildComponentByName<Text>(AnswerObject, "Weapon").text = murderWeapon.name;
+        GetChildComponentByName<Text>(AnswerObject, "Location").text = location.Name;
+        GetChildComponentByName<Text>(AnswerObject, "NPC").text = npc.name;
+
+        //PlaceClue(Answer);
+        PlaceBloodyWeapons(location, murderWeapon);
+        foreach (GameObject weapon in Weapons)
+        {
+            PlaceWeapon(SelectRandomLocation(), weapon);
+        }
+    }
+
+    private T GetChildComponentByName<T>(GameObject obj, string name) where T : Component {
+        foreach (T component in obj.GetComponentsInChildren<T>(true)) {
+            if (component.gameObject.name == name) {
+                return component;
+            }
+        }
+        return null;
+    }
+
+    private void PlaceClue(GameAnswer answer)
+    {
+        int value = 0;
+        switch (value)
+        {
             case 0:
-                // Blood
+                PlaceBlood(answer);
                 break;
             case 1:
                 // Fingerprint
@@ -57,53 +80,46 @@ public class GameRandomiser : MonoBehaviour {
         }
     }
 
-    private void PlaceObjects() {
-        PlaceWeapons();
-        PlaceNPCs();
+    private void PlaceBloodyWeapons(Location location, GameObject bloodyWeapon) 
+    {
+        Instantiate(bloodyWeapon, location.WeaponPosition, Quaternion.identity);
+        Debug.Log("Placed bloody weapon");
     }
 
-    private void PlaceWeapons() {
-        Vector3 location;
-        List<Vector3> selectedLocations = new List<Vector3>();
-        for (int i = 0; i < Weapons.Count; i++) {
-            while (true) {
-                location = SelectRandomLocation();
-                if (!selectedLocations.Contains(location)) {
-                    selectedLocations.Add(location);
-                    Instantiate(Weapons[i], location, Quaternion.identity);
-                    break;
-                }
-            }
-        }
-    }
-
-    private void PlaceNPCs() {
-        Vector3 location;
-        List<Vector3> selectedLocations = new List<Vector3>();
-        for (int i = 0; i < NPCs.Count; i++) {
-            while (true) {
-                location = SelectRandomLocation();
-                if (!selectedLocations.Contains(location)) {
-                    selectedLocations.Add(location);
-                    Instantiate(NPCs[i], location.normalized, Quaternion.identity);
-                    break;
-                }
-            }
-        }
+    private void PlaceWeapon(Location location, GameObject weapon)
+    {
+        Instantiate(weapon, location.WeaponPosition, Quaternion.identity);
     }
 
     private GameObject SelectRandomWeapon() {
-        int value = Rng.Next(Weapons.Count);
-        return Weapons[value];
+        int value = Rng.Next(BloodyWeapons.Count);
+        return BloodyWeapons[value];
     }
 
-    private Vector3 SelectRandomLocation() {
-        int value = Rng.Next(WeaponLocations.Count);
-        return WeaponLocations[value].transform.position;
+    private Location SelectRandomLocation() {
+        int value = Rng.Next(Locations.Count);
+        Location currentLocation = Locations[value];
+        Locations.RemoveAt(value);
+        return currentLocation;
     }
 
     private GameObject SelectRandomNPC() {
         int value = Rng.Next(NPCs.Count);
         return NPCs[value];
+    }
+
+    public void PlaceBlood(GameAnswer Answer)
+    {
+        foreach (var location in LocationObjects)
+        {
+
+            Debug.Log(location.name);
+            if (location.name == Answer.Location.Name)
+            {
+                Vector3 spawnPoint = location.transform.position;
+                Instantiate(prefabToPlace, spawnPoint, prefabToPlace.rotation);
+                Debug.Log("Succes");
+            }
+        }
     }
 }

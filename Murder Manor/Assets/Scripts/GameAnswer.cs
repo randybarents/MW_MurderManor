@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
 public class GameAnswer {
-    private readonly GameObject Weapon;
-    private readonly Vector3 Location;
-    private readonly GameObject NPC;
+    public GameObject Weapon { get; }
+    public Location Location { get; }
+    public GameObject NPC { get; }
 
-    public GameAnswer(GameObject weapon, Vector3 location, GameObject npc) {
+    public GameAnswer(GameObject weapon, Location location, GameObject npc) {
         Weapon = weapon;
         Location = location;
         NPC = npc;
