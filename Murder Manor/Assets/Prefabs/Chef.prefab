@@ -198,7 +198,6 @@ GameObject:
   - component: {fileID: 7392012703475311483}
   - component: {fileID: 7392012703475311480}
   - component: {fileID: 7392012703475311478}
-  - component: {fileID: 7392012703475311486}
   - component: {fileID: 7392012703475311476}
   - component: {fileID: 7392012703475311477}
   - component: {fileID: 7392012703475311479}
@@ -293,19 +292,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerInteractor: {fileID: 0}
---- !u!114 &7392012703475311486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7392012703475311487}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a89ff5e8286f745ae42fcfd3d22d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenText: {fileID: 0}
 --- !u!195 &7392012703475311476
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -761,6 +747,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 7392012703948973098}
   m_maskType: 0
+  _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
 --- !u!1 &7392012704284255354

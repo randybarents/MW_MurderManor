@@ -720,6 +720,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1600128949329766888}
   m_maskType: 0
+  _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
 --- !u!1 &1600128949666826666
@@ -858,7 +859,6 @@ GameObject:
   - component: {fileID: 1600128949877288633}
   - component: {fileID: 1600128949877288634}
   - component: {fileID: 1600128949877288628}
-  - component: {fileID: 1600128949877288636}
   - component: {fileID: 1600128949877288630}
   - component: {fileID: 1600128949877288631}
   - component: {fileID: 1600128949877288629}
@@ -953,19 +953,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerInteractor: {fileID: 0}
---- !u!114 &1600128949877288636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600128949877288637}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a89ff5e8286f745ae42fcfd3d22d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenText: {fileID: 0}
 --- !u!195 &1600128949877288630
 NavMeshAgent:
   m_ObjectHideFlags: 0

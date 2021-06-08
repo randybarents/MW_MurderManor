@@ -29,12 +29,12 @@ public class NPCInteraction : MonoBehaviour {
         weaponChild = Answer.transform.Find("Weapon").gameObject;
         npcChild = Answer.transform.Find("NPC").gameObject;
         locationChild = Answer.transform.Find("Location").gameObject;
-        string scenarioJson = File.ReadAllText("Assets/Resources/Scenarios.json");
-        Scenarios = JsonConvert.DeserializeObject<Dictionary<string, string>>(scenarioJson);
         actions.Add("help", Help);
         keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
         keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
         keywordRecognizer.Start();
+        string scenarioJson = File.ReadAllText("Assets/Resources/Scenarios.json");
+        Scenarios = JsonConvert.DeserializeObject<Dictionary<string, string>>(scenarioJson);
     }
 
     private void RecognizedSpeech(PhraseRecognizedEventArgs speech) {
@@ -48,7 +48,7 @@ public class NPCInteraction : MonoBehaviour {
     private void Help() {
         Debug.Log("Heard");
         string key = $"scenario.{NPCType}.{ScenarioNumber.ToString(CultureInfo.InvariantCulture)}";
-        StartCoroutine(Place(key, new string[] { weaponChild.GetComponent<Text>().ToString(), npcChild.GetComponent<Text>().ToString(), locationChild.GetComponent<Text>().ToString() }));
+        StartCoroutine(Place(key, new string[] { weaponChild.GetComponent<Text>().text, npcChild.GetComponent<Text>().text, locationChild.GetComponent<Text>().text }));
     }
 
     private IEnumerator Place(string key, params string[] args) {
