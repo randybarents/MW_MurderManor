@@ -11,7 +11,9 @@ public class GameRandomiser : MonoBehaviour {
     public List<GameObject> BloodyWeapons;
     public List<GameObject> Weapons;
     public List<GameObject> NPCs;
-    public Transform prefabToPlace;
+    public List<GameObject> Rooms;
+    private BloodScript script;
+    public Component component;
 
 
     private readonly System.Random Rng = new System.Random();
@@ -37,20 +39,22 @@ public class GameRandomiser : MonoBehaviour {
 
     private void GenerateAnswer() {
         GameObject murderWeapon = SelectRandomWeapon();
-        Location location = SelectRandomLocation();
+        Location weaponLocation = SelectRandomWeaponLocation(); //weaponlocation
         GameObject npc = SelectRandomNPC();
+        GameObject location = SelectRandomLocation();
 
         Answer = new GameAnswer(murderWeapon, location, npc);
 
         GetChildComponentByName<Text>(AnswerObject, "Weapon").text = murderWeapon.name;
-        GetChildComponentByName<Text>(AnswerObject, "Location").text = location.Name;
+        GetChildComponentByName<Text>(AnswerObject, "Location").text = location.name;
         GetChildComponentByName<Text>(AnswerObject, "NPC").text = npc.name;
 
         //PlaceClue(Answer);
-        PlaceBloodyWeapons(location, murderWeapon);
+        PlaceBloodyWeapons(weaponLocation, murderWeapon);
+        PlaceBlood(location);
         foreach (GameObject weapon in Weapons)
         {
-            PlaceWeapon(SelectRandomLocation(), weapon);
+            PlaceWeapon(SelectRandomWeaponLocation(), weapon);
         }
     }
 
@@ -69,7 +73,6 @@ public class GameRandomiser : MonoBehaviour {
         switch (value)
         {
             case 0:
-                PlaceBlood(answer);
                 break;
             case 1:
                 // Fingerprint
@@ -83,7 +86,7 @@ public class GameRandomiser : MonoBehaviour {
     private void PlaceBloodyWeapons(Location location, GameObject bloodyWeapon) 
     {
         Instantiate(bloodyWeapon, location.WeaponPosition, Quaternion.identity);
-        Debug.Log("Placed bloody weapon");
+        Debug.Log("Placed bloody weapon" + location.WeaponPosition);
     }
 
     private void PlaceWeapon(Location location, GameObject weapon)
@@ -96,7 +99,13 @@ public class GameRandomiser : MonoBehaviour {
         return BloodyWeapons[value];
     }
 
-    private Location SelectRandomLocation() {
+    private GameObject SelectRandomLocation()
+    {
+        int value = Rng.Next(Rooms.Count);
+        return Rooms[value];
+    }
+
+    private Location SelectRandomWeaponLocation() {
         int value = Rng.Next(Locations.Count);
         Location currentLocation = Locations[value];
         Locations.RemoveAt(value);
@@ -108,18 +117,34 @@ public class GameRandomiser : MonoBehaviour {
         return NPCs[value];
     }
 
-    public void PlaceBlood(GameAnswer Answer)
+    public void PlaceBlood(GameObject room)
     {
-        foreach (var location in LocationObjects)
+        foreach (GameObject location in Rooms)
         {
-
-            Debug.Log(location.name);
-            if (location.name == Answer.Location.Name)
+            if (location.name == room.name)
             {
-                Vector3 spawnPoint = location.transform.position;
-                Instantiate(prefabToPlace, spawnPoint, prefabToPlace.rotation);
-                Debug.Log("Succes");
+                Debug.Log(location.name);
+                component = FindComponentInChildWithTag<Component>(location, "BloodTrigger");
+                Debug.Log("yes");
+                component.gameObject.SetActive(true);
+                script.ActivateBlood();
+
+                GameObject test = GameObject.Find(location.name);
+
+                //blood = test.FindComp
+                //blood.enable(true);
+
             }
         }
+    }
+
+    public static T FindComponentInChildWithTag<T>(GameObject parent, string tag) where T : Component
+    {
+        Component component = parent.GetComponent<Component>();
+        if (component.tag == tag)
+        {
+            return component.GetComponent<T>();
+        }
+        return null;
     }
 }

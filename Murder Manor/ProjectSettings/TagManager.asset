@@ -12,6 +12,8 @@ TagManager:
   - Fire
   - NPC
   - RoomDetectionHitbox
+  - Weapon
+  - BloodTrigger
   layers:
   - Default
   - TransparentFX
