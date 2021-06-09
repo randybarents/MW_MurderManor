@@ -83,7 +83,7 @@ public class GameRandomiser : MonoBehaviour {
     private void PlaceBloodyWeapons(Location location, GameObject bloodyWeapon) 
     {
         Instantiate(bloodyWeapon, location.WeaponPosition, Quaternion.identity);
-        Debug.Log("Placed bloody weapon" + location.WeaponPosition);
+        //Debug.Log("Placed bloody weapon" + location.WeaponPosition);
     }
 
     private void PlaceWeapon(Location location, GameObject weapon)
@@ -111,6 +111,7 @@ public class GameRandomiser : MonoBehaviour {
 
     private GameObject SelectRandomNPC() {
         int value = Rng.Next(NPCs.Count);
+        Debug.Log(NPCs[value].name);
         return NPCs[value];
     }
 
@@ -118,24 +119,24 @@ public class GameRandomiser : MonoBehaviour {
     {
         foreach (GameObject location in Rooms)
         {
-            if (location.name == room.name)
-            {
-                Debug.Log(location.name);
-                Debug.Log(FindComponentInChildWithTag<Transform>(location, "BloodTrigger"));
+            while(FindComponentInChildWithTag<Transform>(location, "BloodTrigger").gameObject.activeSelf == false){
+                if (location.name == room.name)
+                {  
+                    FindComponentInChildWithTag<Transform>(location, "BloodTrigger").gameObject.SetActive(true);
+                    Debug.Log(FindComponentInChildWithTag<Transform>(location, "BloodTrigger").gameObject);
 
-                //blood = test.FindComp
-                //blood.enable(true);
-
+                }
             }
+
         }
     }
 
-    public static T FindComponentInChildWithTag<T>(GameObject parent, string tag) where T : Component
+    public static Transform FindComponentInChildWithTag<T>(GameObject parent, string tag) where T : Component
     {
-        Component component = parent.GetComponent<Component>();
-        if (component.tag == tag)
+        foreach(Transform child in parent.transform)
         {
-            return component.GetComponent<T>();
+            if(child.tag == tag)
+                return(child.transform);
         }
         return null;
     }

@@ -16,7 +16,8 @@ public class UIHandler : MonoBehaviour
         DropDownMenuWeapons.SetActive(isVisible);
         DropDownMenuNPCs.SetActive(isVisible);
         CommitButton.SetActive(isVisible);
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.None;
+
     }
 
     // Update is called once per frame
@@ -29,7 +30,7 @@ public class UIHandler : MonoBehaviour
             DropDownMenuWeapons.SetActive(isVisible);
             DropDownMenuNPCs.SetActive(isVisible);
             CommitButton.SetActive(isVisible);
-            Cursor.lockState = CursorLockMode.Confined;
+            //Cursor.lockState = CursorLockMode.Confined;
         }
     }
 }

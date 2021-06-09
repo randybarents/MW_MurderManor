@@ -78,10 +78,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_cursorIsLocked = false;
             }
-            else if(Input.GetMouseButtonUp(0))
+            if (Input.GetKeyUp(KeyCode.Tab))
             {
-                m_cursorIsLocked = true;
+                m_cursorIsLocked = !m_cursorIsLocked;
             }
+            // else if(Input.GetMouseButtonUp(0))
+            // {
+            //     m_cursorIsLocked = true;
+            // }
 
             if (m_cursorIsLocked)
             {

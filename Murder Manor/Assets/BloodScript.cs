@@ -7,9 +7,9 @@ public class BloodScript : MonoBehaviour
 
     public GameObject blood;
 
-    void Start()
+    void Awake()
     {
-        blood = GameObject.FindGameObjectWithTag("BloodTrigger");
+        GameObject.FindGameObjectWithTag("BloodTrigger");
         blood.SetActive(false);
     }
 

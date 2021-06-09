@@ -18,6 +18,9 @@ public class NPCInteraction : MonoBehaviour {
     private GameObject npcChild;
     private GameObject locationChild;
     public Text ScreenText;
+    private string weaponText;
+    private string locationText;
+    private string npcText;
     private Dictionary<string, string> Scenarios;
     private readonly int ScenarioNumber = 1;
     private string NPCType;
@@ -26,10 +29,8 @@ public class NPCInteraction : MonoBehaviour {
     private readonly Dictionary<string, Action> actions = new Dictionary<string, Action>();
 
     void Start() {
-        weaponChild = Answer.transform.Find("Weapon").gameObject;
-        npcChild = Answer.transform.Find("NPC").gameObject;
-        locationChild = Answer.transform.Find("Location").gameObject;
-        actions.Add("what happened", Help);
+        SetAnswerText();
+        actions.Add("explain", Help);
         keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
         keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
         keywordRecognizer.Start();
@@ -48,7 +49,7 @@ public class NPCInteraction : MonoBehaviour {
     private void Help() {
         Debug.Log("Heard");
         string key = $"scenario.{NPCType}.{ScenarioNumber.ToString(CultureInfo.InvariantCulture)}";
-        StartCoroutine(Place(key, new string[] { weaponChild.GetComponent<Text>().text, npcChild.GetComponent<Text>().text, locationChild.GetComponent<Text>().text }));
+        StartCoroutine(Place(key, new string[] { weaponText, npcText, locationText }));
     }
 
     private IEnumerator Place(string key, params string[] args) {
@@ -58,5 +59,15 @@ public class NPCInteraction : MonoBehaviour {
             yield return new WaitForSeconds(TextDuration);
         }
         ScreenText.text = "";
+    }
+
+    private void SetAnswerText()
+    {
+        weaponChild = Answer.transform.Find("Weapon").gameObject;
+        npcChild = Answer.transform.Find("NPC").gameObject;
+        locationChild = Answer.transform.Find("Location").gameObject;
+        weaponText = weaponChild.GetComponent<Text>().text;
+        npcText = npcChild.GetComponent<Text>().text;
+        locationText = locationChild.GetComponent<Text>().text;
     }
 }
