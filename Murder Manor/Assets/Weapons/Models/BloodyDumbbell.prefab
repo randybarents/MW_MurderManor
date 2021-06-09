@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4818260421339260251}
   - component: {fileID: 8462894572397079294}
   - component: {fileID: 5951166675786128948}
+  - component: {fileID: -3959514439092192677}
+  - component: {fileID: -6086027786779554724}
   m_Layer: 0
   m_Name: BloodyDumbbell
   m_TagString: Weapon
@@ -79,3 +81,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-3959514439092192677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302486083004563425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2414e5253ee9047b52092427b217eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 5302486083004563425}
+  prefabPosition: {fileID: 7910702042805227087, guid: 656797833d4a0fb4b85dd2c40e06bcaf,
+    type: 3}
+  inspectionHappening: 0
+--- !u!65 &-6086027786779554724
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302486083004563425}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.302086, y: 3.3020864, z: 7.9382076}
+  m_Center: {x: 0.00000011920929, y: -0.00000047683716, z: 0}

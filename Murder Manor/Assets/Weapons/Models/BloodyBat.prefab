@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 538860793706531346}
   - component: {fileID: 538860793709922866}
   - component: {fileID: 538860793708824818}
+  - component: {fileID: -8726199223902785294}
+  - component: {fileID: -8550391969572764620}
   m_Layer: 0
   m_Name: BloodyBat
   m_TagString: Weapon
@@ -79,3 +81,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-8726199223902785294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538860793706632754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2414e5253ee9047b52092427b217eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 538860793706632754}
+  prefabPosition: {fileID: 7910702042805227087, guid: 656797833d4a0fb4b85dd2c40e06bcaf,
+    type: 3}
+  inspectionHappening: 0
+--- !u!65 &-8550391969572764620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538860793706632754}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.21458094, y: 2.4564304, z: 0.24777672}
+  m_Center: {x: 0, y: 0.96432155, z: -0.0014346279}
