@@ -12,9 +12,6 @@ public class GameRandomiser : MonoBehaviour {
     public List<GameObject> Weapons;
     public List<GameObject> NPCs;
     public List<GameObject> Rooms;
-    private BloodScript script;
-    public Component component;
-
 
     private readonly System.Random Rng = new System.Random();
     public GameObject AnswerObject;
@@ -124,12 +121,7 @@ public class GameRandomiser : MonoBehaviour {
             if (location.name == room.name)
             {
                 Debug.Log(location.name);
-                component = FindComponentInChildWithTag<Component>(location, "BloodTrigger");
-                Debug.Log("yes");
-                component.gameObject.SetActive(true);
-                script.ActivateBlood();
-
-                GameObject test = GameObject.Find(location.name);
+                Debug.Log(FindComponentInChildWithTag<Transform>(location, "BloodTrigger"));
 
                 //blood = test.FindComp
                 //blood.enable(true);
