@@ -35,6 +35,7 @@ public class GameRandomiser : MonoBehaviour {
     }
 
     private void GenerateAnswer() {
+        GameObject murderWeaponBloody = SelectRandomBloodyWeapon();
         GameObject murderWeapon = SelectRandomWeapon();
         Location weaponLocation = SelectRandomWeaponLocation(); //weaponlocation
         GameObject npc = SelectRandomNPC();
@@ -47,7 +48,7 @@ public class GameRandomiser : MonoBehaviour {
         GetChildComponentByName<Text>(AnswerObject, "NPC").text = npc.name;
 
         //PlaceClue(Answer);
-        PlaceBloodyWeapons(weaponLocation, murderWeapon);
+        PlaceBloodyWeapons(weaponLocation, murderWeaponBloody);
         PlaceBlood(location);
         foreach (GameObject weapon in Weapons)
         {
@@ -91,9 +92,14 @@ public class GameRandomiser : MonoBehaviour {
         Instantiate(weapon, location.WeaponPosition, Quaternion.identity);
     }
 
-    private GameObject SelectRandomWeapon() {
+    private GameObject SelectRandomBloodyWeapon() {
         int value = Rng.Next(BloodyWeapons.Count);
         return BloodyWeapons[value];
+    }
+
+    private GameObject SelectRandomWeapon() {
+        int value = Rng.Next(Weapons.Count);
+        return Weapons[value];
     }
 
     private GameObject SelectRandomLocation()
@@ -119,15 +125,12 @@ public class GameRandomiser : MonoBehaviour {
     {
         foreach (GameObject location in Rooms)
         {
-            while(FindComponentInChildWithTag<Transform>(location, "BloodTrigger").gameObject.activeSelf == false){
-                if (location.name == room.name)
-                {  
-                    FindComponentInChildWithTag<Transform>(location, "BloodTrigger").gameObject.SetActive(true);
-                    Debug.Log(FindComponentInChildWithTag<Transform>(location, "BloodTrigger").gameObject);
+            if (location.name == room.name)
+            {  
+                FindComponentInChildWithTag<Transform>(location, "BloodTrigger").gameObject.SetActive(true);
+                Debug.Log(FindComponentInChildWithTag<Transform>(location, "BloodTrigger").gameObject);
 
-                }
             }
-
         }
     }
 

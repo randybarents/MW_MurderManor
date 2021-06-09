@@ -33,6 +33,10 @@ public class AsnwerChecker : MonoBehaviour
 
         if(!textList.Contains(location) || !textList.Contains(weapon) || !textList.Contains(npc))
         {
+            foreach(var item in textList){
+                    Debug.Log(item);
+            }
+            Debug.Log(weapon);
             Debug.Log("false");
             return false;       
         } 

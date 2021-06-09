@@ -5,17 +5,9 @@ using UnityEngine;
 public class BloodScript : MonoBehaviour
 {
 
-    public GameObject blood;
-
     void Awake()
     {
-        GameObject.FindGameObjectWithTag("BloodTrigger");
-        blood.SetActive(false);
-    }
-
-    public void ActivateBlood()
-    {
-        blood.SetActive(true);
+        GameObject.FindGameObjectWithTag("BloodTrigger").SetActive(false);
     }
 
     // Update is called once per frame
