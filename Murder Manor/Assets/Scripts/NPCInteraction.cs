@@ -29,7 +29,7 @@ public class NPCInteraction : MonoBehaviour {
         weaponChild = Answer.transform.Find("Weapon").gameObject;
         npcChild = Answer.transform.Find("NPC").gameObject;
         locationChild = Answer.transform.Find("Location").gameObject;
-        actions.Add("help", Help);
+        actions.Add("what happened", Help);
         keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
         keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
         keywordRecognizer.Start();
