@@ -75,7 +75,6 @@ public class InspectWeapon : MonoBehaviour
         {
             if (hit.transform.tag == "Weapon")
             {
-                Debug.Log(hit.transform.tag);
                 weapon = hit.transform.gameObject;
                 PlayerInteract();
             }
