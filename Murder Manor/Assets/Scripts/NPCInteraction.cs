@@ -47,7 +47,6 @@ public class NPCInteraction : MonoBehaviour {
     }
 
     private void Help() {
-        Debug.Log("Heard");
         string key = $"scenario.{NPCType}.{ScenarioNumber.ToString(CultureInfo.InvariantCulture)}";
         StartCoroutine(Place(key, new string[] { weaponText, npcText, locationText }));
     }

@@ -14443,6 +14443,26 @@ PrefabInstance:
       propertyPath: advancedSettings.airControl
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 401329375004076853, guid: 7aeb0bfc7ae2b514091006f520d9e9b7,
+        type: 3}
+      propertyPath: movementSettings.StrafeSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 401329375004076853, guid: 7aeb0bfc7ae2b514091006f520d9e9b7,
+        type: 3}
+      propertyPath: movementSettings.ForwardSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 401329375004076853, guid: 7aeb0bfc7ae2b514091006f520d9e9b7,
+        type: 3}
+      propertyPath: movementSettings.BackwardSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 401329375004076853, guid: 7aeb0bfc7ae2b514091006f520d9e9b7,
+        type: 3}
+      propertyPath: movementSettings.RunMultiplier
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 401329375004076855, guid: 7aeb0bfc7ae2b514091006f520d9e9b7,
         type: 3}
       propertyPath: m_Enabled
