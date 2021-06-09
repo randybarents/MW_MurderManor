@@ -16,6 +16,7 @@ public class GameRandomiser : MonoBehaviour {
     private readonly System.Random Rng = new System.Random();
     public GameObject AnswerObject;
     private GameAnswer Answer;
+    private string IgnoreThisWeapon;
 
     void Start() {
         Locations = FillObjects();
@@ -43,7 +44,7 @@ public class GameRandomiser : MonoBehaviour {
 
         Answer = new GameAnswer(murderWeapon, location, npc);
 
-        GetChildComponentByName<Text>(AnswerObject, "Weapon").text = murderWeapon.name;
+        GetChildComponentByName<Text>(AnswerObject, "Weapon").text = IgnoreThisWeapon;
         GetChildComponentByName<Text>(AnswerObject, "Location").text = location.name;
         GetChildComponentByName<Text>(AnswerObject, "NPC").text = npc.name;
 
@@ -52,7 +53,9 @@ public class GameRandomiser : MonoBehaviour {
         PlaceBlood(location);
         foreach (GameObject weapon in Weapons)
         {
-            PlaceWeapon(SelectRandomWeaponLocation(), weapon);
+            if(weapon.name != IgnoreThisWeapon){
+                PlaceWeapon(SelectRandomWeaponLocation(), weapon);  
+            }    
         }
     }
 
@@ -94,6 +97,9 @@ public class GameRandomiser : MonoBehaviour {
 
     private GameObject SelectRandomBloodyWeapon() {
         int value = Rng.Next(BloodyWeapons.Count);
+        IgnoreThisWeapon = BloodyWeapons[value].name.Replace("Bloody", "");
+        Debug.Log(IgnoreThisWeapon);
+        
         return BloodyWeapons[value];
     }
 
