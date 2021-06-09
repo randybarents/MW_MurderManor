@@ -17,6 +17,10 @@ public class InspectWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            CheckWeapon();
+        }
         if (inspectionHappening)
         {
             if (Input.GetKey(KeyCode.LeftArrow))
@@ -59,8 +63,22 @@ public class InspectWeapon : MonoBehaviour
 
     public void PlayerInteract()
     {
-        weapon = Instantiate(weapon, prefabPosition.transform.position, prefabPosition.transform.rotation);
-        weapon.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+        weapon = Instantiate(weapon, prefabPosition.transform.position, prefabPosition.transform.rotation , prefabPosition.transform);
         inspectionHappening = true;
+    }
+
+    public void CheckWeapon()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position,transform.forward,out hit))
+        {
+            if (hit.transform.tag == "Weapon")
+            {
+                Debug.Log(hit.transform.tag);
+                weapon = hit.transform.gameObject;
+                PlayerInteract();
+            }
+        }
     }
 }

@@ -170,7 +170,6 @@ GameObject:
   - component: {fileID: 4155090105165262482}
   - component: {fileID: 4166848068833495352}
   - component: {fileID: 4176409167931232574}
-  - component: {fileID: 7676388579888782695}
   - component: {fileID: 7245816997833893258}
   m_Layer: 0
   m_Name: BloodyHandgun
@@ -188,7 +187,7 @@ Transform:
   m_GameObject: {fileID: 4153355490199085476}
   m_LocalRotation: {x: 0.0000018099952, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 4155104566535851150}
   - {fileID: 4158769154654241892}
@@ -242,22 +241,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7676388579888782695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4153355490199085476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d2414e5253ee9047b52092427b217eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 4153355490199085476}
-  prefabPosition: {fileID: 7910702042805227087, guid: 656797833d4a0fb4b85dd2c40e06bcaf,
-    type: 3}
-  inspectionHappening: 0
 --- !u!65 &7245816997833893258
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -266,10 +249,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4153355490199085476}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.027766205, y: 0.13337004, z: 0.22312883}
+  m_Size: {x: 0.1, y: 0.2, z: 0.3}
   m_Center: {x: 0.00002830103, y: -0.021096118, z: 0.016558815}
 --- !u!1 &4153357414438497518
 GameObject:

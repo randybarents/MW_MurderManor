@@ -249,11 +249,10 @@ GameObject:
   - component: {fileID: 3858895107676018891}
   - component: {fileID: 3888799960250974049}
   - component: {fileID: 3878094929894958951}
-  - component: {fileID: -5309172451435487517}
   - component: {fileID: -6160737989291880748}
   m_Layer: 0
   m_Name: Handgun
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,7 +266,7 @@ Transform:
   m_GameObject: {fileID: 3857326587081136125}
   m_LocalRotation: {x: 0.0000018099952, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 3858935476138359511}
   - {fileID: 3860357059952030269}
@@ -321,22 +320,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &-5309172451435487517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3857326587081136125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d2414e5253ee9047b52092427b217eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 3857326587081136125}
-  prefabPosition: {fileID: 7910702042805227087, guid: 656797833d4a0fb4b85dd2c40e06bcaf,
-    type: 3}
-  inspectionHappening: 0
 --- !u!65 &-6160737989291880748
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -345,8 +328,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3857326587081136125}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.027766205, y: 0.13337004, z: 0.22312883}
+  m_Size: {x: 0.1, y: 0.2, z: 0.3}
   m_Center: {x: 0.00002830103, y: -0.021096118, z: 0.016558815}

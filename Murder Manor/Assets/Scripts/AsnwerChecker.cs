@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AsnwerChecker : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class AsnwerChecker : MonoBehaviour
         button.onClick.AddListener(() => CheckAnswer(DropdownLocations.captionText.text, DropdownWeapons.captionText.text, DropdownNPCs.captionText.text));
     }
 
-    bool CheckAnswer(string location, string weapon, string npc)
+    void CheckAnswer(string location, string weapon, string npc)
     {
         List<string> textList = new List<string>();
 
@@ -38,7 +39,7 @@ public class AsnwerChecker : MonoBehaviour
             }
             Debug.Log(weapon);
             Debug.Log("false");
-            return false;       
+            SceneManager.LoadScene(3);
         } 
         else
         {
@@ -46,7 +47,7 @@ public class AsnwerChecker : MonoBehaviour
             Debug.Log(location);
             Debug.Log(weapon);
             Debug.Log(npc);
-            return true;
+            SceneManager.LoadScene(2);
         }
     }
 }
