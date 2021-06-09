@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameTimer : MonoBehaviour
@@ -32,8 +33,7 @@ public class GameTimer : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 0;
-            timerText.text = "Game over!";
+            SceneManager.LoadScene(3);
         }
     }    
 }
